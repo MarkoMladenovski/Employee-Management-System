@@ -7,17 +7,20 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using EmployeeNamespace.Model;
 using Microsoft.Extensions.DependencyInjection;
+using AutoMapper;
+using EmployeeNamespace.Profiles;
 
-public class Startup
+public class MappingProfile
 {
     private readonly IConfiguration configuration;
 
     public IConfiguration GetConfiguration() => configuration;
 
-    public Startup(IConfiguration configuration) => this.configuration = configuration;
+    public MappingProfile(IConfiguration configuration) => this.configuration = configuration;
 
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddAutoMapper(typeof(MappingProfile));
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 

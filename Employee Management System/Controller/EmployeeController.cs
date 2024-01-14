@@ -3,9 +3,51 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using EmployeeNamespace.Model; 
+using EmployeeNamespace.Model;
+using System.Net.NetworkInformation;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.ComponentModel.Design;
+using AutoMapper;
+using EmployeeNamespace.DTOs;
+using EmployeeNamespace.Repositories;
+using System.Diagnostics;
 
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 public class EmployeeController : Controller
+{
+    public IActionResult Index(string id)
+    {
+        var employeeDto = new EmployeeDto
+        }
+    EmployeeId = 1,
+    Name = Joe,
+    Position = "Software Developer",
+    Salary = 70.00
+}
+{
+    private readonly IEmployeeRepository _employeeRepository;
+    private readonly IMapper _mapper;
+
+    public EmployeeController(IEmployeeRepository employeeRepository, IMapper mapper)
+    {
+        _employeeRepository = employeeRepository;
+        _mapper = mapper;
+    }
+
+    public IActionResult GetEmployee(int id)
+    {
+        var employeeEntity = _employeeRepository.GetEmployeeByIdAsync(id).Result;
+        var employeeDto = _mapper.Map<EmployeeDto>(employeeEntity);
+        return View(employeeDto);
+    }
+
+    private string GetDebuggerDisplay()
+    {
+        return ToString();
+    }
+}
+return View(employeeDto);
+}
 {
     private readonly AppDbContext _context;
 
@@ -146,3 +188,4 @@ public class EmployeeController : Controller
         return _context.Employees.Any(e => e.Id == id);
     }
 }
+//moze da ide vo service, 
