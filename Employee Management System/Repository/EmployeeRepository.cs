@@ -46,3 +46,10 @@ public class EmployeeRepository : IEmployeeRepository
         }
     }
 }
+// While traditional CRUD operations (Create, Read, Update, Delete) have been widely used,
+// there are more modern and effective practices available, such as Command Query Responsibility
+// Segregation (CQRS) and Event Sourcing. These patterns offer better scalability, improved
+// separation of concerns, and enhanced performance in certain scenarios. Consider exploring
+// these alternatives when designing systems with complex data processing requirements.
+// For simpler scenarios, traditional CRUD may still be appropriate, but it's valuable to be
+// aware of evolving architectural patterns that can provide additional benefits.
