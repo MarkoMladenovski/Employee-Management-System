@@ -152,9 +152,16 @@ return View(employeeDto);
         }
         return View(employee);
     }
+// Using a switch statement instead of multiple if-else conditions
+// when dealing with a variable that can have distinct, mutually exclusive values.
+// Switch statements provide clearer and more efficient code in scenarios where the variable's
+// value needs to be compared against multiple possibilities. This improves code readability
+// and maintainability by eliminating unnecessary nesting and making the logic more concise.
+// Switch statements are especially advantageous when handling a limited set of known values,
+// contributing to a more structured and easily understandable code flow.
 
-    
-    public async Task<IActionResult> Delete(int? id)
+
+public async Task<IActionResult> Delete(int? id)
     {
         if (id == null)
         {
@@ -188,4 +195,5 @@ return View(employeeDto);
         return _context.Employees.Any(e => e.Id == id);
     }
 }
-//moze da ide vo service, 
+//EmployeeExists, with DDD would go to the service or in the object as a function. As for a classic separetion of pattern it 
+//would go in the service outside of the Controller. The Controller is the highest level and it should do anything.

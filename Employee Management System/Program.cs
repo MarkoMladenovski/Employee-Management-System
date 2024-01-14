@@ -45,4 +45,6 @@ namespace EmployeeManagementSystem
                 });
     }
 }
-
+// A Swagger could be used to  simplify API development with auto-generated, interactive documentation,
+// streamlined testing, automatic client SDK generation, standardized specifications,
+// and visual representation of the API structure.
