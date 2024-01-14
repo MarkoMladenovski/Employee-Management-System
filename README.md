@@ -25,7 +25,9 @@ To run the project, use the following command:
 
 bash
 Copy code
+
 dotnet run
+
 This will start the application and make it accessible at http://localhost:5000.
 
 Important Note Regarding Database
