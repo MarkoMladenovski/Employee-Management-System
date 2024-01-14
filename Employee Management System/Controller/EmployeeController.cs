@@ -196,4 +196,5 @@ public async Task<IActionResult> Delete(int? id)
     }
 }
 //EmployeeExists, with DDD would go to the service or in the object as a function. As for a classic separetion of pattern it 
-//would go in the service outside of the Controller. The Controller is the highest level and it should do anything.
+//would go in the service outside of the Controller. It would be better suited in a service or a better separeted layer,
+//as the highest layer should`t do any logic in more complex cleaner solution.
