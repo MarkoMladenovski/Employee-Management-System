@@ -1,4 +1,4 @@
-# Employee Management System
+Employee Management System
 Overview
 The goal of this project is to create EMS(Employee Management System), using the best practeces such as CRUD, DEPENDANCY INJECTION, MVC etc...
 
@@ -31,7 +31,7 @@ dotnet run
 This will start the application and make it accessible at http://localhost:5000.
 
 Important Note Regarding Database
-This project does not currently use SQL scripts. While I have experience with SQL, my background is primarily in Java, and I am taking some time to familiarize myself with .NET. As a result, the database setup is pending, and I appreciate your understanding.
+This project does not currently use SQL commands. While I have experience with SQL, my background is primarily in Java, and I am taking some time to familiarize myself with .NET. As a result, the database setup is pending, and I appreciate your understanding.
 
 
 Contributing
