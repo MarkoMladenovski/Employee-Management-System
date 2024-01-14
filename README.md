@@ -13,7 +13,7 @@ Clone the repository to your local machine:
 
 bash
 Copy code
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/MarkoMladenovski/Employee-Management-System.git
 cd your-project
 Build the project:
 
