@@ -5,22 +5,29 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using EmployeeNamespace.Model; 
+using EmployeeNamespace.Model;
+using Microsoft.Extensions.DependencyInjection;
 
 public class Startup
 {
-    public IConfiguration Configuration { get; }
+    private readonly IConfiguration configuration;
 
-    public Startup(IConfiguration configuration)
-    {
-        Configuration = configuration;
-    }
+    public IConfiguration GetConfiguration() => configuration;
+
+    public Startup(IConfiguration configuration) => this.configuration = configuration;
 
     public void ConfigureServices(IServiceCollection services)
     {
-       
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        object value = services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+        public void ConfigureServices(IServiceCollection services)
+    {
+       
+        services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(GetConfiguration().GetConnectionString("DefaultConnection")));
 
         
         services.AddControllersWithViews();
@@ -32,9 +39,9 @@ public class Startup
 
        
         services.AddTransient<IFooService, FooService>();
-        services.AddScoped<IBarService, BarService>();
-
+        services.AddScoped<IEployeeRepository, EmployeeRepository>();
         
+
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
